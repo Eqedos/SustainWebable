@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:src="@drawable/weblogo"
+        android:layout_marginTop="-20dp"
+        android:layout_marginBottom="-50dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SustainWebable"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:fontFamily="@font/comfortaa"
+        android:textStyle="bold"></TextView>
+
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/loginregimg" />
+
+
+    <TextView
+        android:id="@+id/txtview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-40dp"
+        android:fontFamily="@font/leaguespartanlight"
+        android:text="Browse Greener."
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle"
+        android:text="Do Your Part."
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:textColor="#00151A"
+        android:textStyle="bold"
+        android:fontFamily="@font/comfortaa"
+        android:visibility="visible"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="16dp"/>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account?"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_gravity="clip_vertical"
+            android:fontFamily="@font/comfortaa"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login"
+            android:layout_width="69dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:layout_marginLeft="2dp"
+            android:background="#00000000"
+            android:fontFamily="@font/comfortaa"
+            android:text="Sign In"
+            android:textAllCaps="false"
+            android:textColor="@color/teal1"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
