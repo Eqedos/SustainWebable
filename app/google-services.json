@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "102805370598",
+    "project_id": "sustainwebable",
+    "storage_bucket": "sustainwebable.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102805370598:android:664fb0addfb8ce7ba6ed27",
+        "android_client_info": {
+          "package_name": "com.example.sustainwebable"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102805370598-eojv4il6rr4335g321bsdcis7l4prpvj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sustainwebable",
+            "certificate_hash": "f9e751646c2c8259c1222a38e20d78b87d2a6c52"
+          }
+        },
+        {
+          "client_id": "102805370598-2f5p8k28hdq9uvrfdtc2o5prl93ni084.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfSnsmaxXZEnLD2PVE4TCqdNwZYHFo3S4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102805370598-2f5p8k28hdq9uvrfdtc2o5prl93ni084.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
