@@ -2,6 +2,8 @@ package com.example.sustainwebable;
 
 import static android.content.ContentValues.TAG;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,8 +14,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -53,22 +57,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(websiteCarbonAdapter);
         usersDB= FirebaseDatabase.getInstance("https://sustainwebable-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Users").child(UId).child("links");
         WebsiteCarbonAPI api = new WebsiteCarbonAPI();
-        usersDB.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                List<WebsiteCarbonResponse> websiteCarbonResponses = new ArrayList<>();
-                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
-                    WebsiteCarbonResponse websiteCarbonResponse = new WebsiteCarbonResponse();
-                    websiteCarbonResponses.add(websiteCarbonResponse);
-                }
-                websiteCarbonAdapter=new WebsiteCarbonAdapter(websiteCarbonResponses,MainActivity.this);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.e(TAG, "onCancelled", databaseError.toException());
-            }
-        });
+        getlinkdetails();
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,6 +87,44 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void getlinkdetails(){
+        usersDB.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                if (snapshot.exists()){
+                    WebsiteCarbonResponse websiteCarbonResponse = new WebsiteCarbonResponse();
+
+                    if (snapshot.child("bytes").exists()){
+                        Toast.makeText(MainActivity.this,String.valueOf(snapshot.child("bytes").getValue()),Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "dont work", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
     public class WebsiteCarbonResponse {
         private String url;
