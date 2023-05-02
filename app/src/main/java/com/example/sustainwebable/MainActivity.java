@@ -53,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
         String UId= mAuth.getUid();
         recyclerView=findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        websiteCarbonAdapter = new WebsiteCarbonAdapter(new ArrayList<WebsiteCarbonResponse>(),MainActivity.this);
+        ArrayList<WebsiteCarbonResponse> websiteCarbonResponses = new ArrayList<WebsiteCarbonResponse>();
+        websiteCarbonAdapter = new WebsiteCarbonAdapter(getDataSetweb(),MainActivity.this);
         recyclerView.setAdapter(websiteCarbonAdapter);
         usersDB= FirebaseDatabase.getInstance("https://sustainwebable-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Users").child(UId).child("links");
         WebsiteCarbonAPI api = new WebsiteCarbonAPI();
@@ -99,6 +100,12 @@ public class MainActivity extends AppCompatActivity {
                         websiteCarbonResponse.setBytes(Integer.parseInt(snapshot.child("bytes").getValue().toString()));
                         websiteCarbonResponse.setCleanerThan(Double.parseDouble(snapshot.child("cleanerThan").getValue().toString()));
                         websiteCarbonResponse.setGreen(Boolean.parseBoolean(snapshot.child("green").getValue().toString()));
+                        websiteCarbonResponse.getStatistics().getCo2().getRenewable().setGrams(Double.parseDouble(snapshot.child("statistics").child("co2").child("renewable").child("grams").getValue().toString()));
+                        websiteCarbonResponse.getStatistics().getCo2().getGrid().setGrams(Double.parseDouble(snapshot.child("statistics").child("co2").child("grid").child("grams").getValue().toString()));
+                        websiteCarbonResponse.getStatistics().getCo2().getRenewable().setLitres(Double.parseDouble(snapshot.child("statistics").child("co2").child("renewable").child("litres").getValue().toString()));
+                        websiteCarbonResponse.getStatistics().getCo2().getGrid().setLitres(Double.parseDouble(snapshot.child("statistics").child("co2").child("grid").child("litres").getValue().toString()));
+                        websiteCarbonResponses.add(websiteCarbonResponse);
+                        websiteCarbonAdapter.notifyDataSetChanged();
                     }
 
                 }
@@ -274,6 +281,11 @@ public class MainActivity extends AppCompatActivity {
             this.litres = litres;
         }
     }
+    private ArrayList<WebsiteCarbonResponse> websiteCarbonResponses= new ArrayList<WebsiteCarbonResponse>();
+    private List<WebsiteCarbonResponse> getDataSetweb() {
+        return websiteCarbonResponses;
+    }
+
 
 }
 
