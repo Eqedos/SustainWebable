@@ -95,10 +95,12 @@ public class MainActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 if (snapshot.exists()){
                     WebsiteCarbonResponse websiteCarbonResponse = new WebsiteCarbonResponse();
-
                     if (snapshot.child("bytes").exists()){
-                        Toast.makeText(MainActivity.this,String.valueOf(snapshot.child("bytes").getValue()),Toast.LENGTH_SHORT).show();
+                        websiteCarbonResponse.setBytes(Integer.parseInt(snapshot.child("bytes").getValue().toString()));
+                        websiteCarbonResponse.setCleanerThan(Double.parseDouble(snapshot.child("cleanerThan").getValue().toString()));
+                        websiteCarbonResponse.setGreen(Boolean.parseBoolean(snapshot.child("green").getValue().toString()));
                     }
+
                 }
                 else {
                     Toast.makeText(MainActivity.this, "dont work", Toast.LENGTH_SHORT).show();
