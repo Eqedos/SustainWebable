@@ -1,40 +1,103 @@
 package com.example.sustainwebable;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.*;
 
+
+
 public class MainActivity extends AppCompatActivity {
+    private FirebaseAuth mAuth;
+    private EditText urlhere;
+    private TextView datahere;
+    private RecyclerView recyclerView;
+    private WebsiteCarbonAdapter websiteCarbonAdapter;
+    private Button submit;
+    private DatabaseReference usersDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        urlhere=findViewById(R.id.totalurls);
+        submit=findViewById(R.id.checkURL);
+        datahere=findViewById(R.id.datahere);
+        mAuth=FirebaseAuth.getInstance();
+        String UId= mAuth.getUid();
+        recyclerView=findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        websiteCarbonAdapter = new WebsiteCarbonAdapter(new ArrayList<WebsiteCarbonResponse>(),MainActivity.this);
+        recyclerView.setAdapter(websiteCarbonAdapter);
+        usersDB= FirebaseDatabase.getInstance("https://sustainwebable-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Users").child(UId).child("links");
         WebsiteCarbonAPI api = new WebsiteCarbonAPI();
-        api.getCarbonData("https://www.google.com", new Callback() {
+        usersDB.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onFailure(Call call, IOException e) {
-                Log.e("WebsiteCarbonAPI", "API request failed: " + e.getMessage(), e);
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if (response.isSuccessful()) {
-                    String responseBody = response.body().string();
-                    WebsiteCarbonResponse websiteCarbonResponse = new Gson().fromJson(responseBody, WebsiteCarbonResponse.class);
-                    Log.d("WebsiteCarbonAPI", "API response: " + websiteCarbonResponse.getUrl());
-                } else {
-                    Log.e("WebsiteCarbonAPI", "API request failed with status code " + response.code());
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                List<WebsiteCarbonResponse> websiteCarbonResponses = new ArrayList<>();
+                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                    WebsiteCarbonResponse websiteCarbonResponse = new WebsiteCarbonResponse();
+                    websiteCarbonResponses.add(websiteCarbonResponse);
                 }
+                websiteCarbonAdapter=new WebsiteCarbonAdapter(websiteCarbonResponses,MainActivity.this);
             }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e(TAG, "onCancelled", databaseError.toException());
+            }
         });
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                api.getCarbonData(urlhere.getText().toString(), new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        Log.e("WebsiteCarbonAPI", "API request failed: " + e.getMessage(), e);
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        if (response.isSuccessful()) {
+                            String responseBody = response.body().string();
+                            WebsiteCarbonResponse websiteCarbonResponse = new Gson().fromJson(responseBody, WebsiteCarbonResponse.class);
+                            double grams = websiteCarbonResponse.getStatistics().getCo2().getGrid().getGrams();
+                            double roundedGrams = Math.round(grams * 100.0) / 100.0;
+                            String key = usersDB.push().getKey();
+                            datahere.setText(String.valueOf(roundedGrams));
+                            usersDB.child(key).setValue(websiteCarbonResponse);
+                            Log.d("WebsiteCarbonAPI", "API response: " + websiteCarbonResponse.getStatistics().getCo2().getGrid().getGrams());
+                        } else {
+                            Log.e("WebsiteCarbonAPI", "API request failed with status code " + response.code());
+                        }
+                    }
+
+                });
+            }
+        });
+
     }
     public class WebsiteCarbonResponse {
         private String url;

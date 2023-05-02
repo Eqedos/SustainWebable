@@ -4,10 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-<TextView
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+<EditText
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/totalurls"/>
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/checkURL"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Press Submit to view your results!"
+        android:id="@+id/datahere"/>
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/recyclerView"
+    />
 </LinearLayout>
