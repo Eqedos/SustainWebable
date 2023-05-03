@@ -1,6 +1,9 @@
 package com.example.sustainwebable;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +41,15 @@ public class WebsiteCarbonAdapter extends RecyclerView.Adapter<WebsiteCarbonAdap
         holder.urlTextView.setText(websiteCarbonResponse.getUrl());
         holder.bytesTextView.setText(String.valueOf(websiteCarbonResponse.getBytes()));
         holder.gramsTextView.setText(String.format("%.2f", websiteCarbonResponse.getStatistics().getCo2().getGrid().getGrams()));
+        holder.urlTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = websiteCarbonResponse.getUrl();
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

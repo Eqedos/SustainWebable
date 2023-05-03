@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/urlTextView"/>
+    android:layout_height="100dp"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
     <TextView
         android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:id="@+id/bytesTextView"/>
+        android:layout_height="90dp"
+        android:id="@+id/urlTextView"
+        android:clickable="true"
+        android:textColor="@color/blue"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:id="@+id/gramsTextView"/>
+</LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/gramsTextView"/>
+        android:id="@+id/bytesTextView"/>
 </LinearLayout>

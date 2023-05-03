@@ -34,7 +34,7 @@ import okhttp3.*;
 
 
 
-public class MainActivity extends AppCompatActivity implements RecyclerViewInterface {
+public class MainActivity extends BaseActivity implements RecyclerViewInterface {
     private FirebaseAuth mAuth;
     private EditText urlhere;
     private RecyclerView recyclerView;

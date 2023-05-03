@@ -17,10 +17,14 @@
         android:fontFamily="@font/leaguespartanblack"
         android:background="@drawable/rectangle"
         android:id="@+id/checkURL"/>
-
+<androidx.core.widget.NestedScrollView
+    android:layout_marginTop="50dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 <androidx.recyclerview.widget.RecyclerView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/recyclerView"
     />
+</androidx.core.widget.NestedScrollView>
 </LinearLayout>
