@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,10 +34,9 @@ import okhttp3.*;
 
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RecyclerViewInterface {
     private FirebaseAuth mAuth;
     private EditText urlhere;
-    private TextView datahere;
     private RecyclerView recyclerView;
     private WebsiteCarbonAdapter websiteCarbonAdapter;
     private Button submit;
@@ -48,13 +48,12 @@ public class MainActivity extends AppCompatActivity {
 
         urlhere=findViewById(R.id.totalurls);
         submit=findViewById(R.id.checkURL);
-        datahere=findViewById(R.id.datahere);
         mAuth=FirebaseAuth.getInstance();
         String UId= mAuth.getUid();
         recyclerView=findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         ArrayList<WebsiteCarbonResponse> websiteCarbonResponses = new ArrayList<WebsiteCarbonResponse>();
-        websiteCarbonAdapter = new WebsiteCarbonAdapter(getDataSetweb(),MainActivity.this);
+        websiteCarbonAdapter = new WebsiteCarbonAdapter(getDataSetweb(),MainActivity.this,this);
         recyclerView.setAdapter(websiteCarbonAdapter);
         usersDB= FirebaseDatabase.getInstance("https://sustainwebable-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Users").child(UId).child("links");
         WebsiteCarbonAPI api = new WebsiteCarbonAPI();
@@ -76,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                             double grams = websiteCarbonResponse.getStatistics().getCo2().getGrid().getGrams();
                             double roundedGrams = Math.round(grams * 100.0) / 100.0;
                             String key = usersDB.push().getKey();
-                            datahere.setText(String.valueOf(roundedGrams));
                             usersDB.child(key).setValue(websiteCarbonResponse);
                             Log.d("WebsiteCarbonAPI", "API response: " + websiteCarbonResponse.getStatistics().getCo2().getGrid().getGrams());
                         } else {
@@ -97,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 if (snapshot.exists()){
                     WebsiteCarbonResponse websiteCarbonResponse = new WebsiteCarbonResponse();
                     if (snapshot.child("bytes").exists()){
+                        websiteCarbonResponse.setUrl(snapshot.child("url").getValue().toString());
                         websiteCarbonResponse.setBytes(Integer.parseInt(snapshot.child("bytes").getValue().toString()));
                         websiteCarbonResponse.setCleanerThan(Double.parseDouble(snapshot.child("cleanerThan").getValue().toString()));
                         websiteCarbonResponse.setGreen(Boolean.parseBoolean(snapshot.child("green").getValue().toString()));
@@ -107,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
                         websiteCarbonResponses.add(websiteCarbonResponse);
                         websiteCarbonAdapter.notifyDataSetChanged();
                     }
-
                 }
                 else {
                     Toast.makeText(MainActivity.this, "dont work", Toast.LENGTH_SHORT).show();
@@ -135,12 +133,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+        intent.putExtra("Bytes",websiteCarbonResponses.get(position).getBytes());
+        intent.putExtra("Grid",websiteCarbonResponses.get(position).getStatistics().getCo2().getGrid().getGrams());
+        intent.putExtra("Renewable",websiteCarbonResponses.get(position).getStatistics().getCo2().getRenewable().getGrams());
+        intent.putExtra("url",websiteCarbonResponses.get(position).getUrl());
+        intent.putExtra("Green",websiteCarbonResponses.get(position).isGreen());
+        intent.putExtra("CleanerThan",websiteCarbonResponses.get(position).getCleanerThan());
+        startActivity(intent);
+
+
+    }
+
     public class WebsiteCarbonResponse {
         private String url;
         private boolean green;
         private int bytes;
         private double cleanerThan;
-        private Statistics statistics;
+        private Statistics statistics=new Statistics();
 
         public String getUrl() {
             return url;
@@ -187,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
     public class Statistics {
         private double adjustedBytes;
         private double energy;
-        private CO2 co2;
+        private CO2 co2 = new CO2();
 
         public double getAdjustedBytes() {
             return adjustedBytes;
@@ -216,8 +229,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public class CO2 {
-        private Grid grid;
-        private Renewable renewable;
+        private Grid grid = new Grid();
+        private Renewable renewable = new Renewable();
 
         public Grid getGrid() {
             return grid;

@@ -11,12 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class WebsiteCarbonAdapter extends RecyclerView.Adapter<WebsiteCarbonAdapter.ViewHolder> {
+    private final RecyclerViewInterface recyclerViewInterface;
     private List<MainActivity.WebsiteCarbonResponse> websiteCarbonResponses;
     private Context context;
 
-    public WebsiteCarbonAdapter(List<MainActivity.WebsiteCarbonResponse> websiteCarbonResponses, Context context) {
+    public WebsiteCarbonAdapter(List<MainActivity.WebsiteCarbonResponse> websiteCarbonResponses, Context context, RecyclerViewInterface recyclerViewInterface) {
         this.websiteCarbonResponses = websiteCarbonResponses;
         this.context=context;
+        this.recyclerViewInterface=recyclerViewInterface;
     }
 
     @Override
@@ -24,7 +26,7 @@ public class WebsiteCarbonAdapter extends RecyclerView.Adapter<WebsiteCarbonAdap
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_website_carbon, parent, false);
         RecyclerView.LayoutParams layp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         view.setLayoutParams(layp);
-        ViewHolder rcv = new ViewHolder((view));
+        ViewHolder rcv = new ViewHolder(view,recyclerViewInterface);
 
         return rcv;
     }
@@ -48,11 +50,23 @@ public class WebsiteCarbonAdapter extends RecyclerView.Adapter<WebsiteCarbonAdap
         public TextView bytesTextView;
         public TextView gramsTextView;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
             urlTextView = itemView.findViewById(R.id.urlTextView);
             bytesTextView = itemView.findViewById(R.id.bytesTextView);
             gramsTextView = itemView.findViewById(R.id.gramsTextView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (recyclerViewInterface!=null){
+                        int pos = getBindingAdapterPosition();
+
+                        if (pos!=RecyclerView.NO_POSITION){
+                            recyclerViewInterface.onItemClick(pos);
+                        }
+                    }
+                }
+            });
         }
     }
 }

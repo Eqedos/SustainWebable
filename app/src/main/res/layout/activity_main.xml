@@ -7,19 +7,17 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 <EditText
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
     android:id="@+id/totalurls"/>
-    <Button
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="Check my website!"
+        android:fontFamily="@font/leaguespartanblack"
+        android:background="@drawable/rectangle"
         android:id="@+id/checkURL"/>
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="Press Submit to view your results!"
-        android:id="@+id/datahere"/>
+
 <androidx.recyclerview.widget.RecyclerView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
