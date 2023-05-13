@@ -104,6 +104,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
                         websiteCarbonResponse.getStatistics().getCo2().getGrid().setGrams(Double.parseDouble(snapshot.child("statistics").child("co2").child("grid").child("grams").getValue().toString()));
                         websiteCarbonResponse.getStatistics().getCo2().getRenewable().setLitres(Double.parseDouble(snapshot.child("statistics").child("co2").child("renewable").child("litres").getValue().toString()));
                         websiteCarbonResponse.getStatistics().getCo2().getGrid().setLitres(Double.parseDouble(snapshot.child("statistics").child("co2").child("grid").child("litres").getValue().toString()));
+                        websiteCarbonResponse.getStatistics().setEnergy(Double.parseDouble(snapshot.child("statistics").child("energy").getValue().toString()));
                         websiteCarbonResponses.add(websiteCarbonResponse);
                         websiteCarbonAdapter.notifyDataSetChanged();
                     }
@@ -144,6 +145,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
         intent.putExtra("url",websiteCarbonResponses.get(position).getUrl());
         intent.putExtra("Green",websiteCarbonResponses.get(position).isGreen());
         intent.putExtra("CleanerThan",websiteCarbonResponses.get(position).getCleanerThan());
+        intent.putExtra("Energy",websiteCarbonResponses.get(position).getStatistics().getEnergy());
         startActivity(intent);
 
 

@@ -5,14 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
-    <com.anychart.AnyChartView
-        android:id="@+id/any_chart_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+<com.github.mikephil.charting.charts.RadarChart
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/radarChart"></com.github.mikephil.charting.charts.RadarChart>
 </LinearLayout>
