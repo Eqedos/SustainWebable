@@ -14,7 +14,8 @@
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         android:layout_gravity="center"
-        android:foregroundGravity="center">
+        android:foregroundGravity="center"
+        android:id="@+id/cardView">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="100dp"

@@ -2,6 +2,7 @@ package com.example.sustainwebable;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -41,6 +43,13 @@ public class WebsiteCarbonAdapter extends RecyclerView.Adapter<WebsiteCarbonAdap
         holder.urlTextView.setText(websiteCarbonResponse.getUrl());
         holder.bytesTextView.setText(String.valueOf(websiteCarbonResponse.getBytes()));
         holder.gramsTextView.setText(String.format("%.2f", websiteCarbonResponse.getStatistics().getCo2().getGrid().getGrams()));
+        if (websiteCarbonResponse.isGreen()){
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#9DCD5A"));
+        }
+        else {
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#EC9706"));
+        }
+
         holder.urlTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,11 +71,14 @@ public class WebsiteCarbonAdapter extends RecyclerView.Adapter<WebsiteCarbonAdap
         public TextView bytesTextView;
         public TextView gramsTextView;
 
+        public CardView cardView;
         public ViewHolder(View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
             urlTextView = itemView.findViewById(R.id.urlTextView);
             bytesTextView = itemView.findViewById(R.id.bytesTextView);
             gramsTextView = itemView.findViewById(R.id.gramsTextView);
+            cardView = itemView.findViewById(R.id.cardView);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
