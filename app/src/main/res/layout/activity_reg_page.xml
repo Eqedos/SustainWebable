@@ -106,7 +106,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Are you interested in being an organizer or a volunteer?"
+            android:text="Are you a user or a developer?"
             android:layout_gravity="left"
             android:textStyle="bold"
             android:fontFamily="@font/comfortaa"
