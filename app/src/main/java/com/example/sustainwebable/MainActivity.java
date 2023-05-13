@@ -27,6 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -88,7 +89,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
 
     }
 
-    private void getlinkdetails(){
+    public void getlinkdetails(){
         usersDB.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -148,7 +149,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
 
     }
 
-    public class WebsiteCarbonResponse {
+    public class WebsiteCarbonResponse implements Serializable {
         private String url;
         private boolean green;
         private int bytes;
@@ -197,7 +198,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
 // getters and setters
     }
 
-    public class Statistics {
+    public class Statistics implements Serializable {
         private double adjustedBytes;
         private double energy;
         private CO2 co2 = new CO2();
@@ -228,7 +229,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
 // getters and setters
     }
 
-    public class CO2 {
+    public class CO2 implements Serializable {
         private Grid grid = new Grid();
         private Renewable renewable = new Renewable();
 
@@ -250,7 +251,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
 // getters and setters
     }
 
-    public class Grid {
+    public class Grid implements Serializable{
         private double grams;
         private double litres;
 
@@ -272,7 +273,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
 // getters and setters
     }
 
-    public class Renewable {
+    public class Renewable implements Serializable {
         private double grams;
         private double litres;
 
