@@ -7,14 +7,13 @@
 
     <!-- Black background with "Registration" text on top -->
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="Login"
-        android:textColor="#1E1E1E"
+        android:textColor="@color/darkgreen2"
         android:textSize="28sp"
         android:fontFamily="@font/comfortaa"
         android:textStyle="bold"/>
@@ -40,7 +39,7 @@
             android:textStyle="bold"
             android:layout_marginLeft="35dp"
             android:layout_marginTop="10dp"
-            android:textColor="@color/black"
+            android:textColor="@color/darkgreen2"
             android:textSize="18dp"/>
 
         <EditText
@@ -51,7 +50,7 @@
             android:layout_height="wrap_content"
             android:padding="12dp"
             android:textSize="16sp"
-            android:textColorHint="@android:color/black"
+            android:textColorHint="@color/darkgreen2"
             android:inputType="textEmailAddress"
             android:fontFamily="@font/comfortaa" />
 
@@ -65,7 +64,7 @@
             android:textStyle="bold"
             android:layout_marginLeft="35dp"
             android:layout_marginTop="10dp"
-            android:textColor="@color/black"
+            android:textColor="@color/darkgreen2"
             android:textSize="18dp"/>
 
         <EditText
@@ -76,7 +75,7 @@
             android:layout_height="wrap_content"
             android:padding="12dp"
             android:textSize="16sp"
-            android:textColorHint="@android:color/black"
+            android:textColorHint="@color/darkgreen2"
             android:inputType="textPassword"
             android:fontFamily="@font/comfortaa"
             />
@@ -93,7 +92,7 @@
             android:fontFamily="@font/comfortaa"
             android:textStyle="bold"
             android:textSize="20dp"
-            android:textColor="@color/black"
+            android:textColor="@color/darkgreen2"
             android:background="@drawable/rectangle"
             android:textAllCaps="false"/>
         <ImageView

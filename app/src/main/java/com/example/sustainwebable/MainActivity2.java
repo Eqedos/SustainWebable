@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,6 +52,8 @@ public class MainActivity2 extends BaseActivity {
     private FirebaseAuth mAuth;
     String UId;
     ArrayList<MainActivity.WebsiteCarbonResponse> websiteCarbonResponses;
+
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,5 +101,23 @@ public class MainActivity2 extends BaseActivity {
         xAxis.setValueFormatter(new IndexAxisValueFormatter(labels));
         radarChart.getDescription().setText("For more information about each criteria, refer to the text below");
         radarChart.setData(radarData);
+
+
+        // button to main activity 3 to show actual data via recycler view
+       button = findViewById(R.id.ButtonToActualData);
+       button.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
+               intent.putExtra("Bytes", bytes);
+               intent.putExtra("Grid",grid);
+               intent.putExtra("Renewable",renewable);
+               intent.putExtra("url",url);
+               intent.putExtra("Green",green);
+               intent.putExtra("CleanerThan",cleanerthan);
+               intent.putExtra("Energy",energy);
+               startActivity(intent);
+           }
+       });
     }
 }

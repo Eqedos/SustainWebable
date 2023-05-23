@@ -42,6 +42,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
     private WebsiteCarbonAdapter websiteCarbonAdapter;
     private Button submit;
     private DatabaseReference usersDB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +60,9 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
         usersDB= FirebaseDatabase.getInstance("https://sustainwebable-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Users").child(UId).child("links");
         WebsiteCarbonAPI api = new WebsiteCarbonAPI();
         getlinkdetails();
+
+
+        // check url button
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,6 +92,8 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
         });
 
     }
+
+
 
     public void getlinkdetails(){
         usersDB.addChildEventListener(new ChildEventListener() {
@@ -136,6 +142,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
         });
     }
 
+    // click cardview
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(MainActivity.this,MainActivity2.class);

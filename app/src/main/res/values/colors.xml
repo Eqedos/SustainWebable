@@ -22,5 +22,8 @@
     <color name="lightpink">#F7C7B0</color>
     <color name="lightyellow">#FFE2B4</color>
     <color name="yellow">#FEB238</color>
+    <color name="beige">#EDF1D6</color>
+    <color name="lightgreen">#9DC08B</color>
+    <color name="darkgreen2">#40513B</color>
 
 </resources>
