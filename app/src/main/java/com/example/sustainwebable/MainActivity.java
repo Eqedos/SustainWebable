@@ -1,10 +1,7 @@
 package com.example.sustainwebable;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,7 +11,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,7 +19,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -41,6 +36,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
     private RecyclerView recyclerView;
     private WebsiteCarbonAdapter websiteCarbonAdapter;
     private Button submit;
+    private Button logout;
     private DatabaseReference usersDB;
 
     @Override
@@ -59,6 +55,7 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
         recyclerView.setAdapter(websiteCarbonAdapter);
         usersDB= FirebaseDatabase.getInstance("https://sustainwebable-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Users").child(UId).child("links");
         WebsiteCarbonAPI api = new WebsiteCarbonAPI();
+        logout=findViewById(R.id.Logout);
         getlinkdetails();
 
 
@@ -90,7 +87,12 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
                 });
             }
         });
-
+    logout.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            logoutUser();
+        }
+    });
     }
 
 
@@ -141,7 +143,12 @@ public class MainActivity extends BaseActivity implements RecyclerViewInterface 
             }
         });
     }
-
+    public void logoutUser() {
+        mAuth.signOut();
+        Intent intent = new Intent(MainActivity.this, LoginRegPage.class);
+        startActivity(intent);
+        finish();
+    }
     // click cardview
     @Override
     public void onItemClick(int position) {
