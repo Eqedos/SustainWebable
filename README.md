@@ -51,7 +51,7 @@
 <ol>
   <li>Download APK file from https://drive.google.com/file/d/1xhihfgO1V8xq31rcN0gDgqEbZgW9wF9f/view?usp=sharing</li>
   <li>Open Files</li>
-  <li>Open the APK file by navigating to APK installation files (if theres no such option, navigate to internal storage and go to the Download folder</li>
+  <li>Open the APK file by navigating to APK installation files (if theres no such option, navigate to internal storage and go to the Download folder)</li>
   <li>Go to Settings and allow "Allow from this source"</li>
   <li>Press install</li>
 </ol>
