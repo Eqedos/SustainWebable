@@ -37,8 +37,18 @@
 </ol>
 <p>SustainWebable combines the power of these technologies to deliver an intuitive and informative Android application that raises awareness about the environmental impact of web activities, encourages sustainable practices in web development, and provides users with insights into the environmental efficiency of websites.</p>
 
+<h3>Metrics used to analyse a website</h3>
+<ul>
+  <li>Bytes: Number of bytes transferred during each page load</li>
+  <li>Grid: Amount of Co2 transferred (in grams) on each page load (energy from national grid)</li>
+  <li>Green: Whether the hosting of the webiste is considered as "green"</li>
+  <li>CleanerThan: Percentage of tested resources this website is cleaner than (based on Co2 value)</li>
+  <li>Energy: Approximate amount of energy transferred on each page load (in KWg)</li>
+</ul>
+<p>Referenced https://websitecarbon.com</p>
 <h3>App features</h3>
-<h3>
+<h3>Visualize metrics (Gytes, Grid, Renewable, CleanerThan, Energy Transferred) of the app against those of an average website</h3>
+<img src ="appscreenshots/Screenshot_20230523_202519.png" height="600"/>
 <h3>View actual (not normalized) data and additional information</h3>
 <img src = "appscreenshots/Screenshot_20230523_200540.png" height="600"/>
      
