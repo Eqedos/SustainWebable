@@ -49,10 +49,11 @@
 
 <h3>Deployable instructions</h3>
 <ol>
-  <li>Register for an account</li>
-  <li>Enter the website you wish to view the environmental insights of</li>
-  <li>Press the "CHECK MY WEBSITE!" button to view the amount of Co2 transferred (in grams) and number of bytes for the website entered</li>
-  <li>Click on the card to view additional information about the website and unnormalized data</li>
+  <li>Download APK file from https://drive.google.com/file/d/1xhihfgO1V8xq31rcN0gDgqEbZgW9wF9f/view?usp=sharing</li>
+  <li>Open Files</li>
+  <li>Open the APK file by navigating to APK installation files (if theres no such option, navigate to internal storage and go to the Download folder</li>
+  <li>Go to Settings and allow "Allow from this source"</li>
+  <li>Press install</li>
 </ol>
 <h3>App features</h3>
 <h3>Visualize metrics (Gytes, Grid, Renewable, CleanerThan, Energy Transferred) of the app against those of an average website</h3>
