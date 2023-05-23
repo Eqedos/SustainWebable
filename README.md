@@ -36,3 +36,9 @@
   <li>Git/GitHub: Version control system and collaboration platform utilized for source code management, enabling seamless collaboration among team members and ensuring efficient development practices.</li>
 </ol>
 <p>SustainWebable combines the power of these technologies to deliver an intuitive and informative Android application that raises awareness about the environmental impact of web activities, encourages sustainable practices in web development, and provides users with insights into the environmental efficiency of websites.</p>
+
+<h3>App features</h3>
+<h3>
+<h3>View actual (not normalized) data and additional information</h3>
+<img src = "appscreenshots/Screenshot_20230523_200540.png" height="600"/>
+     
