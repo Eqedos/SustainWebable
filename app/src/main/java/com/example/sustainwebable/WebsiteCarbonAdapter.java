@@ -44,7 +44,7 @@ public class WebsiteCarbonAdapter extends RecyclerView.Adapter<WebsiteCarbonAdap
         holder.bytesTextView.setText(String.valueOf(websiteCarbonResponse.getBytes()));
         holder.gramsTextView.setText(String.format("%.2f", websiteCarbonResponse.getStatistics().getCo2().getGrid().getGrams()));
         if (websiteCarbonResponse.isGreen()){
-            holder.cardView.setCardBackgroundColor(Color.parseColor("#9DC08B"));
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#C8E6C9"));
         }
         else {
             holder.cardView.setCardBackgroundColor(Color.parseColor("#EC9706"));

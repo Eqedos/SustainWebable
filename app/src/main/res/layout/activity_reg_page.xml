@@ -35,51 +35,47 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
             android:text="Name"
-            android:textStyle="bold"
             android:layout_gravity="left"
-            android:fontFamily="@font/poppinsregular"
+            android:fontFamily="@font/poppinsmedium"
             android:layout_marginLeft="35dp"
             android:layout_marginTop="10dp"
             android:textColor="@color/green"
-            android:textSize="17dp"/>
+            android:textSize="20sp"/>
         <EditText
             android:hint="Name"
             android:id="@+id/name"
             android:layout_gravity="center"
-            android:layout_width="350dp"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:padding="12dp"
-            android:textSize="14dp"
+            android:textSize="16sp"
             android:textColor="@color/darkgreen"
-
-            android:textColorHint="@android:color/black"
+            android:textColorHint="@color/light_gray"
             android:inputType="textPersonName"
-            android:fontFamily="@font/comfortaa"/>
+            android:fontFamily="@font/poppinsregular"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:text="Email"
-            android:textStyle="bold"
             android:layout_gravity="left"
-            android:fontFamily="@font/comfortaa"
             android:layout_marginLeft="35dp"
             android:layout_marginTop="10dp"
-            android:textColor="@color/black"
-            android:textSize="18dp"/>
+            android:layout_marginBottom="2dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Email"
+            android:textColor="@color/green"
+            android:textSize="20sp" />
 
         <EditText
             android:hint="Email"
             android:id="@+id/email"
             android:layout_gravity="center"
-            android:layout_width="350dp"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:padding="12dp"
             android:textSize="14dp"
             android:textColor="@color/darkgreen"
-
-            android:textColorHint="@android:color/black"
+            android:textColorHint="@color/light_gray"
             android:inputType="textEmailAddress"
             android:fontFamily="@font/comfortaa" />
 
@@ -88,53 +84,50 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
             android:text="Password"
-            android:textStyle="bold"
             android:layout_gravity="left"
-            android:fontFamily="@font/comfortaa"
+            android:fontFamily="@font/poppinsmedium"
             android:layout_marginLeft="35dp"
             android:layout_marginTop="10dp"
-            android:textColor="@color/black"
-            android:textSize="18dp"/>
+            android:textColor="@color/green"
+            android:textSize="20sp"/>
 
         <EditText
-            android:hint="Password"
             android:id="@+id/password"
-            android:layout_gravity="center"
-            android:layout_width="350dp"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/darkgreen"
-
-            android:padding="12dp"
-            android:textSize="14dp"
-            android:textColorHint="@android:color/black"
-            android:inputType="textPassword"
+            android:layout_gravity="center"
             android:fontFamily="@font/comfortaa"
-            />
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:textColor="@color/darkgreen"
+            android:textColorHint="@color/light_gray"
+            android:textSize="14dp" />
+
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:text="Are you a user or a developer?"
             android:layout_gravity="left"
-            android:textStyle="bold"
-            android:fontFamily="@font/comfortaa"
-            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:layout_marginLeft="35dp"
             android:layout_marginTop="10dp"
-            android:textColor="@color/black"
+            android:textColor="@color/green"
             android:textSize="18dp"/>
         <RadioGroup
-            android:layout_width="match_parent"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:id="@+id/radioGroup"
-            android:layout_marginLeft="20dp">
+            android:layout_marginLeft="35dp">
             <RadioButton
-                android:layout_width="match_parent"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:text="User"
                 android:textSize="15dp"
-                android:fontFamily="@font/comfortaa"
+                android:fontFamily="@font/poppinsregular"
                 android:textColor="@color/black"></RadioButton>
             <RadioButton
-                android:layout_width="match_parent"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:text="Developer"
                 android:textSize="15dp"
