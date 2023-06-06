@@ -5,45 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
-    >
+    android:background="@color/white">
+
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:src="@drawable/weblogo"
-        android:layout_marginTop="-20dp"
-        android:layout_marginBottom="-50dp"/>
-    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SustainWebable"
-        android:textColor="@color/black"
-        android:layout_gravity="center"
-        android:fontFamily="@font/comfortaa"
-        android:textStyle="bold"/>
-
+        android:layout_height="300dp"
+        android:layout_gravity="center|top"
+        android:src="@drawable/sustainwebable"
+        android:layout_marginTop="-50dp"/>
 
     <ImageView
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="400dp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerInside"
-        android:src="@drawable/loginregimg" />
-
-
-    <TextView
-        android:id="@+id/txtview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="-40dp"
-        android:fontFamily="@font/leaguespartanlight"
-        android:text="Browse Greener."
-        android:textColor="@color/black"
-        android:textSize="26sp"
-        android:textStyle="bold" />
+        android:src="@drawable/login"
+        android:layout_marginTop="-100dp"
+        android:layout_marginBottom="20dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/register"
@@ -54,12 +31,10 @@
         android:textSize="18sp"
         android:textAllCaps="false"
         android:layout_gravity="center"
-        android:textColor="#00151A"
+        android:textColor="@color/white"
         android:textStyle="bold"
         android:fontFamily="@font/comfortaa"
-        android:visibility="visible"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="16dp"/>
+        android:visibility="visible" />
 
 
 

@@ -5,6 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal">
     <androidx.cardview.widget.CardView
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
@@ -28,18 +30,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Click to visit site:"
-                    android:textColor="@color/darkgreen2"
-                    android:fontFamily="@font/comfortaa"/>
-                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/urlTextView"
-                    android:textColor="@color/darkgreen2"
+                    android:textColor="@color/black"
                     android:paddingStart="5dp"
                     android:fontFamily="@font/comfortaa"
+                    android:textSize="18sp"
                     android:clickable="true" />
             </LinearLayout>
 
@@ -50,21 +47,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Click for more info:"
-                    android:textColor="@color/darkgreen2"
-                    android:fontFamily="@font/comfortaa"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:paddingStart="5dp"
-                    android:textColor="@color/darkgreen2"
+                    android:textColor="@color/black"
                     android:id="@+id/gramsTextView"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="5dp"
                     android:paddingEnd="10dp"
-                    android:textColor="@color/darkgreen2"
+                    android:textColor="@color/black"
                     android:text="grams"
                     android:fontFamily="@font/comfortaa"/>
 
@@ -72,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="5dp"
-                    android:textColor="@color/darkgreen2"
+                    android:textColor="@color/black"
                     android:id="@+id/bytesTextView"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -80,7 +71,7 @@
                     android:paddingStart="5dp"
                     android:paddingEnd="10dp"
                     android:text="bytes"
-                    android:textColor="@color/darkgreen2"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/comfortaa"/>
 
             </LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Other style attributes -->
+        <item name="textAppearanceButton">@style/ButtonTextAppearance</item>
+    </style>
+
+    <style name="ButtonTextAppearance" parent="TextAppearance.AppCompat.Button">
+        <!-- Customize the text appearance for buttons -->
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+        <!-- Other text appearance attributes -->
+    </style>
+</resources>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity2"
-    android:background="@color/beige">
+    android:background="@color/white">
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/ButtonToActualData"
         android:layout_width="200dp"
@@ -14,8 +14,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
         android:text="View Actual Data"
-        android:textColor="@color/darkgreen2"
-        android:background="@color/lightgreen"/>
+        android:textColor="@color/white"
+        android:background="@color/green"/>
 
 
     <com.github.mikephil.charting.charts.RadarChart

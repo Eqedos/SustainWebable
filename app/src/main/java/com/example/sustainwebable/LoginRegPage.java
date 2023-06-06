@@ -12,6 +12,7 @@ public class LoginRegPage extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_reg_page);
+        Intent intent1 = getIntent();
         mRegister = (Button) findViewById(R.id.register);
         mLogin = (Button) findViewById(R.id.login);
         mRegister.setOnClickListener(new View.OnClickListener() {

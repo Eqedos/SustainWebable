@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/beige">
+    android:background="@color/white">
 
     <!-- Black background with "Registration" text on top -->
 
@@ -16,7 +16,7 @@
         android:layout_gravity="center"
         android:textAlignment="center"
         android:text="Registration"
-        android:textColor="#1E1E1E"
+        android:textColor="@color/black"
         android:textSize="28sp"
         android:fontFamily="@font/comfortaa"
         android:textColorHighlight="@color/yellow"
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:padding="12dp"
             android:textSize="14dp"
-            android:textColor="@color/darkgreen2"
+            android:textColor="@color/darkgreen"
 
             android:textColorHint="@android:color/black"
             android:inputType="textPersonName"
@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:padding="12dp"
             android:textSize="14dp"
-            android:textColor="@color/darkgreen2"
+            android:textColor="@color/darkgreen"
 
             android:textColorHint="@android:color/black"
             android:inputType="textEmailAddress"
@@ -102,7 +102,7 @@
             android:layout_gravity="center"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/darkgreen2"
+            android:textColor="@color/darkgreen"
 
             android:padding="12dp"
             android:textSize="14dp"
@@ -140,26 +140,30 @@
                 android:textSize="15dp"
                 android:fontFamily="@font/comfortaa"
                 android:textColor="@color/black"/></RadioGroup>
-        <androidx.appcompat.widget.AppCompatButton
-            android:text="Register"
-            android:id="@+id/register"
-            android:layout_gravity="center"
-            android:layout_width="220dp"
-            android:layout_marginTop="5dp"
-            android:padding="12dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/comfortaa"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:textColor="@color/black"
-            android:textAllCaps="false"
-            android:background="@color/lightgreen"/>
 
         <ImageView
             android:layout_width="200dp"
-            android:layout_height="174dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
+            android:src="@drawable/handsonglobe"
             />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/rectangle"
+            android:fontFamily="@font/comfortaa"
+            android:padding="12dp"
+            android:text="Register"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
