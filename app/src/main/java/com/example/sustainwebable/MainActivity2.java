@@ -55,6 +55,8 @@ public class MainActivity2 extends BaseActivity {
 
     Button button;
 
+    Button button2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,6 +119,15 @@ public class MainActivity2 extends BaseActivity {
                intent.putExtra("CleanerThan",cleanerthan);
                intent.putExtra("Energy",energy);
                startActivity(intent);
+           }
+       });
+
+       button2 = findViewById(R.id.buttonToSuggestions);
+       button2.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent2 = new Intent(MainActivity2.this, MainActivity4.class);
+               startActivity(intent2);
            }
        });
     }

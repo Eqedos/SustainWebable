@@ -51,9 +51,6 @@ public class MainActivity3 extends AppCompatActivity {
         recyclerView3.setAdapter(actualDataAdapter);
 
 
-
-
-
     }
 
 
