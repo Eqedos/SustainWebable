@@ -15,12 +15,16 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/checkURL"
-        android:layout_width="277dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/rectangle"
-        android:text="Check my website!"
-        android:textColor="@color/white" />
+        android:fontFamily="@font/poppinsmedium"
+        android:text="Check My Website"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+
     <androidx.core.widget.NestedScrollView
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
@@ -39,10 +43,13 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Logout"
-        android:layout_width="278dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/rectangle"
-        android:text="Logout"
-        android:textColor="@color/white" />
+        android:text="Log Out"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppinsmedium"
+        android:textSize="17sp"
+        android:textAllCaps="false"/>
 </LinearLayout>

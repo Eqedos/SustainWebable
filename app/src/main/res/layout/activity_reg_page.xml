@@ -16,9 +16,9 @@
         android:layout_gravity="center"
         android:textAlignment="center"
         android:text="Registration"
-        android:textColor="@color/black"
+        android:textColor="@color/green"
         android:textSize="28sp"
-        android:fontFamily="@font/comfortaa"
+        android:fontFamily="@font/poppinsbold"
         android:textColorHighlight="@color/yellow"
         android:textStyle="bold"/>
 
@@ -34,14 +34,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
-            android:text="Name:"
+            android:text="Name"
             android:textStyle="bold"
             android:layout_gravity="left"
-            android:fontFamily="@font/comfortaa"
+            android:fontFamily="@font/poppinsregular"
             android:layout_marginLeft="35dp"
             android:layout_marginTop="10dp"
-            android:textColor="@color/black"
-            android:textSize="18dp"/>
+            android:textColor="@color/green"
+            android:textSize="17dp"/>
         <EditText
             android:hint="Name"
             android:id="@+id/name"
@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
-            android:text="Email:"
+            android:text="Email"
             android:textStyle="bold"
             android:layout_gravity="left"
             android:fontFamily="@font/comfortaa"
@@ -87,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
-            android:text="Password:"
+            android:text="Password"
             android:textStyle="bold"
             android:layout_gravity="left"
             android:fontFamily="@font/comfortaa"

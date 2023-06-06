@@ -24,16 +24,16 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/register"
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rectangle"
-        android:text="Do Your Part."
-        android:textSize="18sp"
+        android:text="Do Your Part"
+        android:textSize="17sp"
         android:textAllCaps="false"
         android:layout_gravity="center"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:fontFamily="@font/comfortaa"
+        android:fontFamily="@font/poppinsregular"
         android:visibility="visible" />
 
 
@@ -53,7 +53,7 @@
             android:textColor="@color/black"
             android:textSize="14sp"
             android:layout_gravity="clip_vertical"
-            android:fontFamily="@font/comfortaa"/>
+            android:fontFamily="@font/poppinsregular"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/login"
@@ -62,7 +62,7 @@
             android:layout_gravity="top"
             android:layout_marginLeft="2dp"
             android:background="#00000000"
-            android:fontFamily="@font/comfortaa"
+            android:fontFamily="@font/poppinsregular"
             android:text="Sign In"
             android:textAllCaps="false"
             android:textColor="@color/teal1"

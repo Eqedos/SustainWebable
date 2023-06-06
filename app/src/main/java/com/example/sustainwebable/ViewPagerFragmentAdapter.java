@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class ViewPagerFragmentAdapter extends FragmentStateAdapter {
-    private String[] titles= new String[]{"1", "2","3","4","5"};
+    private String[] titles= new String[]{"1", "2","3"};
     public ViewPagerFragmentAdapter(@NonNull IntroActivity fragmentActivity) {
         super(fragmentActivity);
     }
@@ -21,10 +21,6 @@ public class ViewPagerFragmentAdapter extends FragmentStateAdapter {
                 return new FragmentTwo();
             case 2:
                 return new FragmentThree();
-            case 3:
-                return new FragmentFour();
-            case 4:
-                return new FragmentFive();
         }
         return new FragmentOne();
     }

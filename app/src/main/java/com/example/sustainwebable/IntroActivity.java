@@ -13,7 +13,7 @@ public class IntroActivity extends AppCompatActivity {
     ViewPagerFragmentAdapter viewPagerFragmentAdapter;
     TabLayout tabLayout;
     ViewPager2 viewPager2;
-    private String[] titles= new String[]{"1","2","3","4","5"};
+    private String[] titles= new String[]{"1","2","3"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

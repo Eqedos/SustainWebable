@@ -1,15 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FragmentThree"
     android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/header"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsregular"
+            android:text="Sustainable Developer Recognition"
+            android:textSize="30sp"
+            android:textColor="@color/green"
+            app:layout_constraintBottom_toTopOf="@+id/desc"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:fontFamily="@font/poppinslight"
+            android:text="We award certifications for eco-friendly web development."
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            android:gravity="center"/>
 
-    <ImageView
-        android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:padding="30dp"
+            android:src="@drawable/medal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/desc" />
+
+    </LinearLayout>
+    <Button
+        android:layout_width="320dp"
+        android:fontFamily="@font/poppinsregular"
+        android:textAllCaps="false"
+        android:textSize="17sp"
         android:layout_height="wrap_content"
-        android:src="@drawable/sustainwebable"
-        android:padding="30dp"
-        android:layout_gravity="center"/>
-</FrameLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Start"
+        android:background="@drawable/rectangle"
+        android:id="@+id/buttonToLogin"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
