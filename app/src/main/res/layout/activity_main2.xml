@@ -24,26 +24,37 @@
         android:paddingBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/radarChart">
+
+        <Button
+            android:id="@+id/webBackButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/baseline_arrow_back_ios_new_24" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ButtonToActualData"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
             android:text="Actual Data"
             android:textColor="@color/white"
             android:background="@drawable/rectangle"
             android:textSize="17sp"
+            android:gravity="center"
             android:textAllCaps="false"
+            android:layout_marginStart="10dp"
             android:fontFamily="@font/poppinsregular"/>
         <Button
             android:id="@+id/buttonToSuggestions"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
             android:text="Suggestions"
+            android:gravity="center"
             android:textColor="@color/white"
             android:background="@drawable/rectangle"
             android:textSize="17sp"
             android:textAllCaps="false"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="20dp"
             android:fontFamily="@font/poppinsregular"
             />
     </LinearLayout>

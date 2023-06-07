@@ -53,14 +53,17 @@ public class MainActivity2 extends BaseActivity {
     String UId;
     ArrayList<MainActivity.WebsiteCarbonResponse> websiteCarbonResponses;
 
-    Button button;
+    private Button button;
 
-    Button button2;
+    private Button button2;
+
+    private Button webBackButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
         mAuth= FirebaseAuth.getInstance();
         UId=mAuth.getUid();
         usersDB= FirebaseDatabase.getInstance("https://sustainwebable-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Users").child(UId).child("links");
@@ -130,5 +133,15 @@ public class MainActivity2 extends BaseActivity {
                startActivity(intent2);
            }
        });
+
+       webBackButton = findViewById(R.id.webBackButton);
+       webBackButton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent3 = new Intent(MainActivity2.this, MainActivity.class);
+               startActivity(intent3);
+           }
+       });
+
     }
 }

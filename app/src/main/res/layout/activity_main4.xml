@@ -7,16 +7,37 @@
     tools:context=".MainActivity4"
     android:background="@color/white"
     android:orientation="vertical">
-    <TextView
-        android:paddingTop="30dp"
-        android:textSize="30dp"
-        android:fontFamily="@font/poppinsbold"
-        android:textColor="@color/green"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Browse Greener">
-    </TextView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/suggestionsBackButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/baseline_arrow_back_ios_new_24" />
+
+        <TextView
+            android:paddingTop="30dp"
+            android:textSize="30dp"
+            android:fontFamily="@font/poppinsbold"
+            android:textColor="@color/green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:text="Browse Greener">
+        </TextView>
+
+    </RelativeLayout>
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="320dp"

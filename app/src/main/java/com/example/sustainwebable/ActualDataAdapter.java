@@ -23,7 +23,7 @@ public class ActualDataAdapter extends RecyclerView.Adapter<ActualDataAdapter.Vi
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.item_actual_values, parent, false);
+        View view = layoutInflater.inflate(R.layout.activity_main5, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }

@@ -11,7 +11,7 @@
         android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:outlineAmbientShadowColor="@color/black"
+        android:outlineAmbientShadowColor="@color/darkgreen"
         android:padding="10dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
@@ -35,8 +35,8 @@
                     android:id="@+id/urlTextView"
                     android:textColor="@color/black"
                     android:paddingStart="5dp"
-                    android:fontFamily="@font/comfortaa"
-                    android:textSize="18sp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:textSize="14sp"
                     android:clickable="true" />
             </LinearLayout>
 
@@ -48,6 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="5dp"
+                    android:textSize="12sp"
                     android:textColor="@color/black"
                     android:id="@+id/gramsTextView"/>
                 <TextView
@@ -55,14 +56,16 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="5dp"
                     android:paddingEnd="10dp"
+                    android:textSize="12sp"
                     android:textColor="@color/black"
                     android:text="grams"
-                    android:fontFamily="@font/comfortaa"/>
+                    android:fontFamily="@font/poppinsmedium"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="5dp"
+                    android:textSize="12sp"
                     android:textColor="@color/black"
                     android:id="@+id/bytesTextView"/>
                 <TextView
@@ -70,9 +73,10 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="5dp"
                     android:paddingEnd="10dp"
+                    android:textSize="12sp"
                     android:text="bytes"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/comfortaa"/>
+                    android:fontFamily="@font/poppinsmedium"/>
 
             </LinearLayout>
 
