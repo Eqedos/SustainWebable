@@ -1,3 +1,5 @@
+>**Note: This was made for a HackSingapore2023 where we won 3rd place amongst 166 teams. The key is expired, if you wish to run the project, please build and setup Firebase.**
+
 <h1> SustainWebable </h1>
 <h2> Team Name: Cookie Clickers </h2>
 <h3> Members </h3> 
